@@ -48,7 +48,7 @@ app.controller('loginController', function($scope, $rootScope, $location, $auth)
      }
 
   })
-  console.log("Logged in: " + JSON.stringify($scope.user));
+  console.log("Logged in as: " + JSON.stringify($scope.user));
 
 
  });
