@@ -14,14 +14,23 @@ var app = angular.module("prty", ['ngRoute', 'satellizer']);
       templateUrl: 'partials/splash.html',
       controller: 'loginController'
     })
+    .when('/mobile/:id', {
+      templateUrl: 'partials/mobile.html',
+      controller: 'phoneController'
+    })
     .when('/prtymain', {
       templateUrl: 'partials/mainview.html',
       controller: 'mainController'
     })
     .when('/newparty', {
-      templateUrl: 'partials/party.html',
-      controller: 'partyController',
+      templateUrl: 'partials/url.html',
+      controller: 'urlController',
     })
+    .when('/current/:id', {
+      templateUrl: 'partials/currentparty.html',
+      controller: 'partyController'
+    })
+
 
 
 

@@ -4,6 +4,17 @@ var router = express.Router();
 var knex = require('../db/knex');
 var request = require('request');
 var jwt = require('jsonwebtoken');
+var cloudinary = require('cloudinary');
+var fs = require('fs')
+var multer = require('multer')
+var upload = multer({dest: './'})
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_KEY,
+  api_secret: process.env.CLOUD_SECRET,
+
+});
 
 
 function Users(){
@@ -11,6 +22,9 @@ function Users(){
 }
 function Parties(){
   return knex('parties')
+}
+function Images(){
+  return knex('images')
 }
 function createToken(user){
   return jwt.sign(user, process.env.TOKEN_SECRET)
@@ -72,11 +86,35 @@ router.post('/new', function(req, res){
 
 })
 
+//get the current newest party id for the user, and then toggle new to false
 router.get('/new/:facebook_id', function(req, res){
   Parties().where({facebook_id: req.params.facebook_id, new: true}).select('id').then(function(result){
     res.send(result)
+    Parties().where({facebook_id: req.params.facebook_id, new: true}).update({new: false}).then(function(result){
+      res.status(200)
+    });
+
   })
 })
 
+router.post('/new/img', upload.single('file'), function(req, res){
+  console.log(req.body);
+  console.log(req.file.filename);
+  cloudinary.uploader.upload(req.file.filename, function(result){
+    var id = req.body.party_id
+    var img = {};
+    img.party_id = req.body.party_id;
+    img.image_url = result.secure_url;
+    Images().insert(img).then(function(result){
+      res.redirect("/#/mobile/"+id)
+    })
+  })
+})
+
+router.get('/pics/:id', function(req, res){
+  Images().where('id', req.params.id).then(function(result){
+    res.send(result)
+  })
+})
 
 module.exports = router;

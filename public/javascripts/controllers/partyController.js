@@ -1,14 +1,18 @@
-app.controller('partyController', function($scope, $rootScope, $location, $http, userService, partyService){
+app.controller('partyController', function($scope, $rootScope, $location, $http, $interval, $routeParams, picService){
+var party_id = $routeParams.id
 
-  userService.validateUser().then(function(result){
-    var facebook_id = result.facebook_id
-    var data = JSON.stringify({facebook_id : facebook_id, new : true})
-    $http.post('new', data).then(function(response){
-      var id = partyService.makeUrl(facebook_id)
-      $scope.url = "go to prty.live/"+ id + "on your phone to join the party"; 
 
-    })
+$scope.getPics = function(){
+  picService.getPics(party_id).then(function(results){
+    console.log(results);
+    $scope.pics = results;
   })
+}
+
+
+
+$interval( function() {$scope.getPics(); }, 7000);
+
 
 
 })
