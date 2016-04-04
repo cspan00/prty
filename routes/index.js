@@ -9,6 +9,9 @@ var jwt = require('jsonwebtoken');
 function Users(){
   return knex('users')
 }
+function Parties(){
+  return knex('parties')
+}
 function createToken(user){
   return jwt.sign(user, process.env.TOKEN_SECRET)
 }
@@ -61,5 +64,19 @@ router.post('/user', function(req,res){
     res.send(result)
   })
 })
+
+router.post('/new', function(req, res){
+  Parties().insert(req.body).then(function(result){
+    res.send('new party created');
+  })
+
+})
+
+router.get('/new/:facebook_id', function(req, res){
+  Parties().where({facebook_id: req.params.facebook_id, new: true}).select('id').then(function(result){
+    res.send(result)
+  })
+})
+
 
 module.exports = router;

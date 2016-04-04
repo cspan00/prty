@@ -37,18 +37,8 @@ app.controller('loginController', function($scope, $rootScope, $location, $auth)
     console.log("successfully logged out!");
   }
 
-  $rootScope.$on('$locationChangeSuccess', function(){
-      if(localStorage.satellizer_token){
-        // $scope.logIn = false;
-        $scope.user.session = true;
-      }
-      else{
 
-       $scope.user.session = false;
-     }
 
-  })
-  console.log("Logged in as: " + JSON.stringify($scope.user));
 
 
  });

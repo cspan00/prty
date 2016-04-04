@@ -4,7 +4,7 @@ var app = angular.module("prty", ['ngRoute', 'satellizer']);
   //PRODUCTION CLIENT ID 1579059145739333
   app.config(function ($routeProvider, $authProvider){
     $authProvider.facebook({
-      clientId: '1579059145739333',
+      clientId: '617834671715742',
       scope: ['email'],
       scopeDelimiter: ',',
       profileFields: ['name', 'id', 'picture.type(large)', 'emails']
@@ -18,7 +18,7 @@ var app = angular.module("prty", ['ngRoute', 'satellizer']);
       templateUrl: 'partials/mainview.html',
       controller: 'mainController'
     })
-    .when('/new', {
+    .when('/newparty', {
       templateUrl: 'partials/party.html',
       controller: 'partyController',
     })
