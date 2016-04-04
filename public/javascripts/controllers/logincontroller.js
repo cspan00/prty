@@ -1,8 +1,4 @@
 app.controller('loginController', function($scope, $rootScope, $location, $auth) {
-  $scope.user = {}
-  $scope.userName
-  // $scope.loggedIn = false;
-  // $scope.logIn = true;
    $scope.login = function() {
      $auth.login($scope.user)
        .then(function() {
@@ -52,7 +48,6 @@ app.controller('loginController', function($scope, $rootScope, $location, $auth)
      }
 
   })
-  console.log($scope);
   console.log("Logged in: " + JSON.stringify($scope.user));
 
 
