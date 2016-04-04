@@ -18,6 +18,10 @@ var app = angular.module("prty", ['ngRoute', 'satellizer']);
       templateUrl: 'partials/mainview.html',
       controller: 'mainController'
     })
+    .when('/new', {
+      templateUrl: 'partials/party.html',
+      controller: 'partyController',
+    })
 
 
 
