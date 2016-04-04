@@ -54,4 +54,12 @@ router.post('/auth/facebook', function(req,res){
     });
 })
 
+router.post('/user', function(req,res){
+    var token = req.body.token
+    var user = verifyToken(token)
+    Users().where('facebook_id', user.facebook_id).first().then(function(result){
+    res.send(result)
+  })
+})
+
 module.exports = router;

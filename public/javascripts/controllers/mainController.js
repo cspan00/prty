@@ -1,5 +1,8 @@
-app.controller('mainController', function($scope, $rootScope, $location, $auth) {
+app.controller('mainController', function($scope, $rootScope, $location, $auth, userService) {
 
-  $scope.test = "main contoller"
+userService.validateUser().then(function(result){
+  $scope.user = result
+})
+
 
 })
