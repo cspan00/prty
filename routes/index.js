@@ -108,11 +108,13 @@ router.post('/new/img', upload.single('file'), function(req, res){
     Images().insert(img).then(function(result){
       res.redirect("/#/mobile/"+id)
     })
+    fs.unlink('./'+req.file.filename)
   })
 })
 
 router.get('/pics/:id', function(req, res){
-  Images().where('id', req.params.id).then(function(result){
+  Images().select('*').where('party_id', req.params.id).then(function(result){
+    console.log(result);
     res.send(result)
   })
 })

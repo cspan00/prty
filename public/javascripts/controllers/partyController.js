@@ -11,7 +11,7 @@ $scope.getPics = function(){
 
 
 
-$interval( function() {$scope.getPics(); }, 7000);
+$interval( function() {$scope.getPics(); }, 1000);
 
 
 
