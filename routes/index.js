@@ -127,4 +127,15 @@ router.get('/random', function(req, res){
 })
 })
 
+router.get('/userpics/:id', function(req, res){
+  Images().select('image_url').innerJoin('parties', 'images.party_id', '=', 'parties.id').andWhere('parties.facebook_id', req.params.id).then(function(result){
+    res.send(result)
+  })
+})
+
+
+
+
+
+
 module.exports = router;
