@@ -5,29 +5,17 @@
            <ul class="sidebar-nav">
                <li class="sidebar-brand">
                    <a href="#">
-                       Start Bootstrap
+                       {{user.first_name}}
                    </a>
                </li>
                <li>
-                   <a href="#">Dashboard</a>
+                   <a>Options</a>
                </li>
                <li>
-                   <a href="#">Shortcuts</a>
+                   <a>FAQ</a>
                </li>
                <li>
-                   <a href="#">Overview</a>
-               </li>
-               <li>
-                   <a href="#">Events</a>
-               </li>
-               <li>
-                   <a href="#">About</a>
-               </li>
-               <li>
-                   <a href="#">Services</a>
-               </li>
-               <li>
-                   <a href="#">Contact</a>
+                   <a href= "/#/" ng-click="logout()">Logout</a>
                </li>
            </ul>
        </div>
@@ -38,7 +26,7 @@
            <div class="container-fluid">
                <div class="row">
                    <div class="col-lg-12">
-                       <h1>Simple Sidebar</h1>
+                       <h1>Previous Parties will appear</h1>
                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
                        <a class="btn btn-default menu" ng-click = "toggleMenu()">Toggle Menu</a>
