@@ -1,4 +1,6 @@
-app.controller('loginController', function($scope, $rootScope, $location, $auth) {
+app.controller('loginController', function($scope, $http, $interval, $rootScope, $location, $auth) {
+  var images = [];
+  $scope.images = images;
    $scope.login = function() {
      $auth.login($scope.user)
        .then(function() {
@@ -36,6 +38,15 @@ app.controller('loginController', function($scope, $rootScope, $location, $auth)
     $auth.logout()
     console.log("successfully logged out!");
   }
+
+  $scope.getRandomPics = function(){
+    $http.get('random').then(function(result){
+      images.push({url : result["data"]["results"][0]["user"]["picture"]["medium"] });
+      console.log(images);
+    })
+  }
+$interval( function() {$scope.getRandomPics(); }, 3000);
+
 
 
 
