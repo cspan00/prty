@@ -18,5 +18,4 @@ $scope.logout = function(){
 
 
 
-
 })
