@@ -119,4 +119,12 @@ router.get('/pics/:id', function(req, res){
   })
 })
 
+router.get('/random', function(req, res){
+  request('https://randomuser.me/api/', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    res.send(body) // Print the google web page.
+  }
+})
+})
+
 module.exports = router;
