@@ -7,10 +7,15 @@ userService.validateUser().then(function(result){
   $scope.user = result
 })
 
+$scope.toggleMenu = function() {
+  $scope.sideBar = !$scope.sideBar;
+}
+
 $scope.logout = function(){
   $auth.logout()
   console.log("successfully logged out!");
 }
+
 
 
 
