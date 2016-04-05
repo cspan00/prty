@@ -41,7 +41,7 @@ app.controller('loginController', function($scope, $http, $interval, $rootScope,
 
   $scope.getRandomPics = function(){
     $http.get('random').then(function(result){
-      images.push({url : result["data"]["results"][0]["user"]["picture"]["medium"] });
+      images.push({url : result["data"]["results"][0]["user"]["picture"]["large"] });
       console.log(images);
     })
   }
