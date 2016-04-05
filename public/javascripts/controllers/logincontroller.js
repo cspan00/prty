@@ -39,15 +39,19 @@ app.controller('loginController', function($scope, $http, $interval, $rootScope,
     console.log("successfully logged out!");
   }
 
-  $scope.getRandomPics = function(){
-    $http.get('random').then(function(result){
-      images.push({url : result["data"]["results"][0]["user"]["picture"]["large"] });
-      console.log(images);
-    })
-  }
-$interval( function() {$scope.getRandomPics(); }, 3000);
+$scope.stop = $interval( function() {$scope.getRandomPics(); }, 3000);
+// code to stop $interval for the splash page when user continues through site. 
+var dereg = $rootScope.$on('$locationChangeSuccess', function(){
+  $interval.cancel($scope.stop);
+  dereg();
+});
 
-
+$scope.getRandomPics = function(){
+  $http.get('random').then(function(result){
+    images.push({url : result["data"]["results"][0]["user"]["picture"]["large"] });
+    console.log(images);
+  })
+}
 
 
 
