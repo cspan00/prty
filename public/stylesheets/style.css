@@ -108,6 +108,8 @@ h6 {
   margin-left: 50px;
   width: 80%;
 }
-.help-block{
-  color: black;
+
+.userpics{
+  width: 300px;
+  transform: rotateX(360);
 }
