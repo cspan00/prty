@@ -8,7 +8,7 @@ app.controller('urlController', function($scope, $rootScope, $location, $http, u
       $http.get('new/'+facebook_id).then(function(response){
         var id = JSON.stringify(response['data'][0]['id']);
         $scope.path = "/#/current/" + id;
-        $scope.url ="https://prtylive.herokuapp/#/mobile/"+ id;
+        $scope.url ="https://prtylive.herokuapp.com/#/mobile/"+ id;
 
       })
 
