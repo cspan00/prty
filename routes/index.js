@@ -8,6 +8,8 @@ var cloudinary = require('cloudinary');
 var fs = require('fs')
 var multer = require('multer')
 var upload = multer({dest: './'})
+var twilio = require('twilio')
+var client = new twilio.RestClient(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -31,6 +33,18 @@ function createToken(user){
 }
 function verifyToken(user){
   return jwt.verify(user, process.env.TOKEN_SECRET)
+}
+
+function sendSMS(number, url){
+  client.messages.create({
+    to:'+1'+number,
+    from:'+15168742608',
+    body: url
+}, function(error, message) {
+    if (error) {
+        console.log(error.message);
+    }
+  });
 }
 
 
@@ -133,6 +147,14 @@ router.get('/userpics/:id', function(req, res){
   })
 })
 
+router.post('/text', function(req, res){
+   var url = req.body.url
+   var numbers = [req.body.number1, req.body.number2, req.body.number3]
+   numbers.forEach(function(elem, i){
+     sendSMS (elem, url)
+   })
+
+})
 
 
 

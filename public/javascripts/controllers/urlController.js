@@ -15,6 +15,21 @@ app.controller('urlController', function($scope, $rootScope, $location, $http, u
 
     })
   })
+  $scope.toggleTextForm = function() {
+  $scope.numbers = !$scope.numbers;
+}
+
+ $scope.sendNumbers = function () {
+   var numbers = {}
+   numbers.url = $scope.url
+   numbers.number1 = $scope.number1
+   numbers.number2 = $scope.number2
+   numbers.number3 = $scope.number3
+   $http.post('text', numbers).then(function(result){
+     console.log(result);
+   })
+ }
+
 
 
 })

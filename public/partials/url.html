@@ -1,4 +1,7 @@
 
+
+
+
 <div class="intro-header">
     <div class="splashContainer">
         <div class="row">
@@ -13,11 +16,22 @@
                     <a class="btn btn-default btn-lg" href = "{{path}}"><i class="fa fa-check-circle-o fa-fw"></i> <span class="network-name">Start!</span></a>
                         </li>
                         <li>
-                    <a class="btn btn-default btn-lg" ng-click = "toggleModal()" ><i class="fa fa-bullhorn fa-fw"></i><span class="network-name">Send URL in text</span></a>
+                    <a class="btn btn-default btn-lg" ng-click = "toggleTextForm()" ><i class="fa fa-bullhorn fa-fw"></i><span class="network-name">Send URL in text</span></a>
                         </li>
                     </ul>
                 </div>
+                <div class = "textForm" ng-show = "numbers" ng-submit = "sendNumbers()">
+                  <form>
+                    <fieldset class = "form-group">
+                      <input type = "number" class = "form-control" ng-model = "number1" placeholder = "enter a number">
+                    </fieldset>
+                    <fieldset class = "form-group">
+                      <input type = "number" class = "form-control" ng-model = "number2" placeholder = "enter a number">
+                    </fieldset>
+                    <fieldset class = "form-group">
+                      <input type = "number" class = "form-control" ng-model = "number3" placeholder = "enter a number">
+                    </fieldset>
+                    <button class = "btn btn-primary" type="submit" ng-click="toggleTextForm()"> Send! </button>
+                  </div>
             </div>
-        </div>
-
     </div>

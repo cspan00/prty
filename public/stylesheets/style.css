@@ -103,3 +103,11 @@ h6 {
     float: right;
     margin-top: 0;
 }
+
+.textForm{
+  margin-left: 50px;
+  width: 80%;
+}
+.help-block{
+  color: black;
+}
