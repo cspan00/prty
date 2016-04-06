@@ -117,3 +117,14 @@ h6 {
 .partyPics{
   width: 300px;
 }
+
+
+.imageUpload{
+  position: absolute;
+  left: 32%;
+  top: 30%;
+}
+
+#file-input{
+  display: none;
+}
