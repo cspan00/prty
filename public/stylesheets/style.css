@@ -111,5 +111,5 @@ h6 {
 
 .userpics{
   width: 300px;
-  transform: rotateX(90);
+  transform: rotate(90deg);
 }
