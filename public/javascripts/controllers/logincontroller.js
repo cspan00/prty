@@ -39,8 +39,8 @@ app.controller('loginController', function($scope, $http, $interval, $rootScope,
     console.log("successfully logged out!");
   }
 
-$scope.stop = $interval( function() {$scope.getRandomPics(); }, 3000);
-// code to stop $interval for the splash page when user continues through site. 
+$scope.stop = $interval( function() {$scope.getRandomPics(); }, 2000);
+// code to stop $interval for the splash page when user continues through site.
 var dereg = $rootScope.$on('$locationChangeSuccess', function(){
   $interval.cancel($scope.stop);
   dereg();
