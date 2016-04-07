@@ -13,6 +13,10 @@ $scope.getPics = function(){
   })
 }
 
+$scope.toggleMenu = function(){
+  $scope.sideBar = !$scope.sideBar
+}
+
 
 
 })
