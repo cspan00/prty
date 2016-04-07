@@ -15,4 +15,7 @@ $scope.getPics = function(){
 
 
 
+}
+
+
 })
