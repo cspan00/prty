@@ -18,10 +18,7 @@ app.controller('partyController', function($scope, $rootScope, $location, $http,
         console.log("successfully logged out!");
       }
 
-     $scope.user = function() {
-       userService.validateUser().then(function(response){
-         $scope.user = response
-       })
+     
 
      }
 
