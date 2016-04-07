@@ -116,6 +116,10 @@ h6 {
 
 .partyPics{
   width: 300px;
+  display: inline-block;
+}
+.party{
+  display: inline-block;
 }
 
 
