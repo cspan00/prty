@@ -16,6 +16,7 @@ $scope.getPics = function(){
 
 $scope.toggleMenu = function(){
   $scope.nav = !$scope.nav
+  console.log($scope.nav);
 }
 
 
