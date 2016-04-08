@@ -3,15 +3,15 @@
   <a class = "navbar-brand">Menu</a>
   <a class = "navbar-brand" href = "/#/" ng-click = "logout()"> Logout</a>
   <a class = "navbar-brand" href ="/#/prtymain"> Save Prty </a>
-  <a class = "navbar-brand" ng-click="slideShow()"> Slideshow Mode </a>
+  <a class = "navbar-brand" ng-click="slideShow()"> Toggle Slideshow Mode </a>
 
 </nav>
 
 
-<div ng-repeat="pic in pics" class = "party">
+<div ng-repeat="pic in pics" class = "party" ng-hide = "showSlides">
   <img src = "{{pic.image_url}}" class= "partyPics">
 </div>
 
 <div class = "slideShow" ng-show = "showSlides">
-  <img src = "{{slide}}">
+  <img src = "{{slide}}" class = "img-responsive slide">
 <div>

@@ -133,5 +133,15 @@ h6 {
   display: none;
 }
 #menu{
-  background-color:#95FF96
+  background-color:#95FF96;
+  z-index: 2000;
+}
+
+.slideShow{
+  width: 100vw;
+  height: 100vh;
+}
+.slide{
+  width: 700px;
+  z-index: 1000;
 }
