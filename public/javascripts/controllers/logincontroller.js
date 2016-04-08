@@ -48,7 +48,7 @@ var dereg = $rootScope.$on('$locationChangeSuccess', function(){
 
 $scope.getRandomPics = function(){
   $http.get('random').then(function(result){
-    images.push({url : result["data"]["results"][0]["user"]["picture"]["large"] });
+    images.push({url : result["data"]["results"][0]["picture"]["large"] });
     console.log(images);
   })
 }
