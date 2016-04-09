@@ -4,7 +4,7 @@ exports.up = function(knex, promise) {
     t.increments('id');
     t.string('facebook_id');
     t.bool('new');
-    t.timestamps();
+    t.string('created_at')
   })
 };
 

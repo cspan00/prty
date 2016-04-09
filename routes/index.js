@@ -10,6 +10,7 @@ var multer = require('multer')
 var upload = multer({dest: './'})
 var twilio = require('twilio')
 var client = new twilio.RestClient(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
+var moment = require("moment")
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -94,7 +95,11 @@ router.post('/user', function(req,res){
 })
 
 router.post('/new', function(req, res){
-  Parties().insert(req.body).then(function(result){
+  var party = {}
+  party.facebook_id = req.body.facebook_id;
+  party.new = req.body.new;
+  party.created_at = new Date();
+  Parties().insert(party).then(function(result){
     res.send('new party created');
   })
 
@@ -155,6 +160,14 @@ router.post('/text', function(req, res){
    })
 
 })
+
+router.post('/old', function(req, res){
+    Parties().where('facebook_id', req.body.facebook_id).then(function(result){
+      res.send(result)
+    })
+})
+
+
 
 
 

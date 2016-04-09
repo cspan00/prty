@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
     t.increments('id');
     t.integer('party_id');
     t.string('image_url');
+    t.string('uploaded_at')
   })
 };
 
