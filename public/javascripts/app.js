@@ -1,4 +1,4 @@
-var app = angular.module("prty", ['ngRoute', 'satellizer']);
+var app = angular.module("prty", ['ngRoute', 'satellizer', 'angularMoment']);
 
   //DEV CLIENT ID 617834671715742
   //PRODUCTION CLIENT ID 1579059145739333

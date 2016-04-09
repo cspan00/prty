@@ -5,6 +5,6 @@
 </nav>
 <div class = "oldContainer">
   <div ng-repeat = "oldParty in oldParties">
-    <h1> {{oldParty.created_at}} </h1>
+    <h1> {{oldParty.created_at | amCalendar}} </h1>
   </div>
 </div>
