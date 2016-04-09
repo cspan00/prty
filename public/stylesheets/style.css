@@ -145,3 +145,6 @@ h6 {
   width: 700px;
   z-index: 1000;
 }
+.oldContainer{
+  padding-top: 60px;
+}

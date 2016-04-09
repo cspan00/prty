@@ -1,7 +1,10 @@
-<nav class="navbar navbar-fixed-top menu">
+<nav class="navbar navbar-fixed-top oldNav">
   <a class="btn btn-default btn-lg" href="/#/prtymain"><i class="fa fa-arrow-left fa-fw"></i> <span class="network-name">Back</span></a>
   <a class="btn btn-default btn-lg" href="/#/" ng-click = "logout()"><i class="fa fa-sign-out fa-fw"></i> <span class="network-name">Logout</span></a>
   <a class="btn btn-default btn-lg" href="/#/newparty"><i class="fa fa-upload fa-fw"></i> <span class="network-name">New Party</span></a>
 </nav>
-<div ng-repeat = "oldParty in oldParties">
-  <h1> {{oldParty.created_at}} </h1>
+<div class = "oldContainer">
+  <div ng-repeat = "oldParty in oldParties">
+    <h1> {{oldParty.created_at}} </h1>
+  </div>
+</div>
