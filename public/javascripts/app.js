@@ -34,6 +34,10 @@ var app = angular.module("prty", ['ngRoute', 'satellizer', 'angularMoment']);
       templateUrl: 'partials/oldparties.html',
       controller: 'oldController'
     })
+    .when('/old/:id', {
+      templateUrl: 'partials/oldShow.html',
+      controller: 'oldShowController'
+    })
 
 
 
