@@ -5,13 +5,19 @@
   <a class="btn btn-default btn-lg" href="/#/" ng-click = "logout()"><i class="fa fa-sign-out fa-fw"></i> <span class="network-name">Logout</span></a>
   <a class="btn btn-default btn-lg" href="/#/prtymain"><i class="fa fa-upload fa-fw"></i> <span class="network-name">Save Party</span></a>
   <a class="btn btn-default btn-lg" href="/#/prtymain"><i class="fa fa-upload fa-fw"></i> <span class="network-name">Main Menu</span></a>
-  <input type = "color" ng-model="background_color">Select Background Color</input>
+  <input type = "color" ng-model="background_color">BG Color</input>
+  <label for ="name">Picture Size</label>
+  <select name = "size" ng-model="size">
+    <option value ="300px" ng-init = > Large</option>
+    <option value ="200px"> Medium</option>
+    <option value ="100px"> Small</option>
+  </select>
   <span> (press return to hide)</span>
 </nav>
 
 
 <div ng-repeat="pic in pics" class = "party" ng-hide ="showSlides">
-  <img src = "{{pic.image_url}}" class= "partyPics">
+  <img src = "{{pic.image_url}}" style="width:{{size}}; display: inline-block;">
 </div>
 
 <div class = "slideShow" ng-show = "showSlides">
