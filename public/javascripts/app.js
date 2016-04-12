@@ -38,6 +38,10 @@ var app = angular.module("prty", ['ngRoute', 'satellizer', 'angularMoment']);
       templateUrl: 'partials/oldShow.html',
       controller: 'oldShowController'
     })
+    .when('/faq', {
+      templateUrl: 'partials/faq.html',
+      controller: 'logincontroller'
+    })
 
 
 
