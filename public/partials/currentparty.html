@@ -1,18 +1,20 @@
-
+<body style = "{background: {{background_color}}}">
 <nav class="navbar navbar-fixed-top menu" id = "menu">
 
   <a class="btn btn-default btn-lg" ng-click = "slideShow()"><i class="fa fa-caret-square-o-right"></i> <span class="network-name">SlideShow Mode</span></a>
   <a class="btn btn-default btn-lg" href="/#/" ng-click = "logout()"><i class="fa fa-sign-out fa-fw"></i> <span class="network-name">Logout</span></a>
   <a class="btn btn-default btn-lg" href="/#/prtymain"><i class="fa fa-upload fa-fw"></i> <span class="network-name">Save Party</span></a>
   <a class="btn btn-default btn-lg" href="/#/prtymain"><i class="fa fa-upload fa-fw"></i> <span class="network-name">Main Menu</span></a>
+  <input type = "color" ng-model="background_color">Select Background Color</input>
   <span> (press return to hide)</span>
 </nav>
 
 
-<div ng-repeat="pic in pics" class = "party" ng-hide = "showSlides">
+<div ng-repeat="pic in pics" class = "party" ng-hide ="showSlides" style = "width:100vw;height:100vh;background-color:{{background_color}}">
   <img src = "{{pic.image_url}}" class= "partyPics">
 </div>
 
 <div class = "slideShow" ng-show = "showSlides">
   <img src = "{{slide}}" class = "img-responsive slide">
 <div>
+</body>
