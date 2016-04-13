@@ -3,13 +3,14 @@ app.controller('urlController', function($scope, $rootScope, $location, $http, u
 
   userService.validateUser().then(function(result){
     var facebook_id = result.facebook_id
+    var name = result.first_name
     var data = JSON.stringify({facebook_id : facebook_id, new : true})
     $http.post('new', data).then(function(response){
       $http.get('new/'+facebook_id).then(function(response){
         var id = JSON.stringify(response['data'][0]['id']);
         $scope.path = "/#/current/" + id;
-        $scope.url ="https://prtylive.herokuapp.com/#/mobile/"+ id;
-
+        $scope.url = name +" Has invited you to a prty go to:https://prtylive.herokuapp.com/#/mobile/"+ id+" to Join!";
+        $scope.display_url = "https://prtylive.herokuapp.com/#/mobile/"+ id
       })
 
 
