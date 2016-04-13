@@ -117,8 +117,6 @@ router.get('/new/:facebook_id', function(req, res){
 })
 
 router.post('/new/img', upload.single('file'), function(req, res){
-  console.log(req.body);
-  console.log(req.file.filename);
   cloudinary.uploader.upload(req.file.filename, function(result){
     var id = req.body.party_id
     var img = {};
@@ -133,7 +131,6 @@ router.post('/new/img', upload.single('file'), function(req, res){
 
 router.get('/pics/:id', function(req, res){
   Images().select('*').where('party_id', req.params.id).then(function(result){
-    console.log(result);
     res.send(result)
   })
 })
