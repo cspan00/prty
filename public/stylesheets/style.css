@@ -146,3 +146,10 @@ h6 {
 .oldContainer, .faqContainer{
   padding-top: 60px;
 }
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.faqContainer{
+  margin-left: 25%;
+}
