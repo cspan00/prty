@@ -9,7 +9,7 @@ app.controller('urlController', function($scope, $rootScope, $location, $http, u
       $http.get('new/'+facebook_id).then(function(response){
         var id = JSON.stringify(response['data'][0]['id']);
         $scope.path = "/#/current/" + id;
-        $scope.url = name +" Has invited you to a prty go to:https://prtylive.herokuapp.com/#/mobile/"+ id+" to Join!";
+        $scope.url = name +" Has invited you to a prty go to: https://prtylive.herokuapp.com/#/mobile/"+ id+" to Join!";
         $scope.display_url = "https://prtylive.herokuapp.com/#/mobile/"+ id
       })
 
