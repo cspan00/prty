@@ -5,6 +5,6 @@ prty.live is a mobile enabled web app that is designed to transform your tv from
 Visit the deployed url at [prty.live][1]
 
 
-[1]: https://www.prtylive.herokuapp.com "prty.live"
+[1]: https://prtylive.herokuapp.com "prty.live"
 
 
