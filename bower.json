@@ -1,0 +1,23 @@
+{
+  "name": "prty",
+  "description": "prty.live",
+  "main": "",
+  "authors": [
+    "Corey Yaspan <cspan00@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cspan00/prty",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-masonry": "^0.16.0",
+    "masonry": "^4.1.0"
+  }
+}

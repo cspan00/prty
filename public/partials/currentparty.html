@@ -9,11 +9,11 @@
   <span> (press return to hide)</span>
 </nav>
 
-
-<div ng-repeat="pic in pics" class = "party" ng-hide ="showSlides">
+<div masonry data-masonry-options = '{"transitionDuration": "12.0s"}'>
+<div class = "masonry-brick" data-masonry-options = '{"transitionDuration":0}' ng-repeat="pic in pics" class = "party" ng-hide ="showSlides">
   <img src = "{{pic.image_url}}" class= "partyPics">
 </div>
-
+</div>
 <div class = "slideShow" ng-show = "showSlides">
   <img src = "{{slide}}" class = "img-responsive slide">
 </div>
