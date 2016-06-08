@@ -5,7 +5,7 @@
 </nav>
 
 <div masonry data-masonry-options = '{"transitionDuration": "5s"}'>
-<div class = "masonry-brick" data-masonry-options = '{"transitionDuration":0}' ng-repeat="pic in pics" class = "party" ng-hide ="showSlides">
+<div class = "masonry-brick" ng-repeat="pic in pics" class = "party" ng-hide ="showSlides">
   <img src = "{{pic.image_url}}" class= "partyPics">
 </div>
 </div>
