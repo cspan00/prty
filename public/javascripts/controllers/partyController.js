@@ -14,11 +14,11 @@ app.controller('partyController', function($timeout, $scope, $rootScope, $locati
       });
 
 
-
+    var picCount = 0;
     var slides;
     var currentSlide = -1;
     var party_id = $routeParams.id
-    $scope.stop = $interval( function() {$scope.getPics(); }, 25000);
+    $scope.stop = $interval( function() {$scope.getPics(); }, 2000);
     // code to stop $interval for the current party page when user continues through site.
     var dereg1 = $rootScope.$on('$locationChangeSuccess', function(){
         $interval.cancel($scope.stop);
@@ -26,8 +26,14 @@ app.controller('partyController', function($timeout, $scope, $rootScope, $locati
       });
     $scope.getPics = function(){
         picService.getPics(party_id).then(function(results){
+          if(picCount < results.length){
+          picCount ++;
           slides = results
           $scope.pics = results;
+        }
+        else{
+          return false;
+        }
         })
       }
 
