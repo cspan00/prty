@@ -1,5 +1,5 @@
-
-<div ng-repeat = "userpic in userpics" class = "randomContainer">
+<div masonry data-masonry-options = '{"transitionDuration": "5s"}'>
+<div ng-repeat = "userpic in userpics" class = "masonry-brick randomContainer">
 <img src = "{{userpic.image_url}}" class = "userpics">
 
 </div>
