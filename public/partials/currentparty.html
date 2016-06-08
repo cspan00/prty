@@ -8,6 +8,20 @@
   <input type = "color" ng-model="background_color">Select Background Color</input>
   <span> (press return to hide)</span>
 </nav>
+<script>
+  // $("html, body").animate({ scrollTop: $(document).height() }, 4000);
+  // setTimeout(function() {
+  //  $('html, body').animate({scrollTop:0}, 4000);
+  // },4000);
+  setInterval(function(){
+     // 4000 - it will take 4 secound in total from the top of the page to the bottom
+  $("html, body").animate({ scrollTop: $(document).height() }, 30000);
+  setTimeout(function() {
+   $('html, body').animate({scrollTop:0}, 5000);
+  },4000);
+
+  },8000);
+</script>
 
 <div masonry data-masonry-options = '{"transitionDuration": ".5s"}'>
 <div class = "masonry-brick" data-masonry-options = '{"transitionDuration":0}' ng-repeat="pic in pics" class = "party" ng-hide ="showSlides">
